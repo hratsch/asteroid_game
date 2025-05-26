@@ -32,6 +32,7 @@ def main():
 
         # re-render player
         player.draw(screen)
+        player.update(dt)
 
 
         # refreshes screen
