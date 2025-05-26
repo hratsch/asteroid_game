@@ -1,5 +1,6 @@
 import pygame
 from constants import *
+from player import *
 
 def main():
     # display welcome text
@@ -17,6 +18,9 @@ def main():
     # get a new GUI window
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
+    # implement Player object
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+
     # create game loop
     while True:
         for event in pygame.event.get():
@@ -25,9 +29,17 @@ def main():
 
         # fill screen with solid black color
         pygame.Surface.fill(screen, color="black")
+
+        # re-render player
+        player.draw(screen)
+
+
         # refreshes screen
         pygame.display.flip()
 
+       
+
+        # set fps to 60
         dt = game_clock.tick(60) / 1000
 
 if __name__ == "__main__":
