@@ -26,7 +26,7 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
     # implement Player object
-    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     # create game loop
     while True:
@@ -43,8 +43,8 @@ def main():
 
         # using groups
         updatable.update(dt)
-        for player in drawable:
-            player.draw(screen)
+        for objects in drawable:
+            objects.draw(screen)
             
 
 
