@@ -21,6 +21,12 @@ def main():
     # implement Player object
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
+    # two groups
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+
+    Player.containers = (updatable, drawable)
+
     # create game loop
     while True:
         for event in pygame.event.get():
@@ -30,9 +36,14 @@ def main():
         # fill screen with solid black color
         pygame.Surface.fill(screen, color="black")
 
-        # re-render player
-        player.draw(screen)
-        player.update(dt)
+        # re-render player // being phased out w/ groups
+        #player.draw(screen)
+        #player.update(dt)
+
+        # using groups
+        updatable.update(dt)
+        for player in drawable:
+            player.draw(screen)
 
 
         # refreshes screen
