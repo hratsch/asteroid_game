@@ -41,9 +41,11 @@ def main():
         #player.update(dt)
 
         # using groups
-        updatable.update(dt)
+        
         for player in drawable:
             player.draw(screen)
+            updatable.update(dt)
+
 
 
         # refreshes screen
