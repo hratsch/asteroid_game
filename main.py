@@ -15,17 +15,18 @@ def main():
     game_clock = pygame.time.Clock()
     dt = 0
 
-    # get a new GUI window
-    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-
-    # implement group class
-    Player.containers = (updatable, drawable)
-    # implement Player object
-    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
-
     # two groups
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
+
+    # implement group class
+    Player.containers = (updatable, drawable)
+
+    # get a new GUI window
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
+    # implement Player object
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     # create game loop
     while True:
