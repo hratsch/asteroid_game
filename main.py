@@ -31,7 +31,7 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
     # implement Player object
-    Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    player_obj = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     # Asteroid Field object
     AsteroidField()
@@ -47,6 +47,12 @@ def main():
 
         # using groups
         updatable.update(dt)
+
+        for objects in asteroids:
+            if objects.collision(player_obj) == True:
+                sys.exit("Game over!")
+
+
         for objects in drawable:
             objects.draw(screen)
 
