@@ -36,7 +36,7 @@ def main():
 
     # implement Player object
     player_obj = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
-
+    
     # Asteroid Field object
     AsteroidField()
 
