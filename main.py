@@ -34,7 +34,7 @@ def main():
     Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     # Asteroid Field object
-    AsteroidField()
+    AsteroidField(Asteroid)
 
     # create game loop
     while True:
