@@ -26,9 +26,10 @@ def main():
     shots = pygame.sprite.Group()
 
     # implement group class
-    Player.containers = (updatable, drawable, shots)
+    Player.containers = (updatable, drawable)
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = (updatable)
+    Shot.containers = (updatable, drawable, shots)
 
     # get a new GUI window
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
