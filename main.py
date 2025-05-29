@@ -36,9 +36,6 @@ def main():
 
     # implement Player object
     player_obj = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
-
-    # shot object
-    bullet_obj = Shot(self.position.x, self.position.y, SHOT_RADIUS)
     
     # Asteroid Field object
     AsteroidField()
