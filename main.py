@@ -36,6 +36,9 @@ def main():
 
     # implement Player object
     player_obj = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+
+    # shot object
+    bullet_obj = Shot(self.position.x, self.position.y, SHOT_RADIUS)
     
     # Asteroid Field object
     AsteroidField()
@@ -55,6 +58,12 @@ def main():
         for objects in asteroids:
             if objects.collision(player_obj) == True:
                 sys.exit("Game over!")
+            
+            
+            for shot in shots:
+                if objects.collision(shot) == True:
+                    objects.kill()
+                    shot.kill()
 
 
         for objects in drawable:
