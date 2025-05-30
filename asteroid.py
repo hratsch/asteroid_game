@@ -25,5 +25,5 @@ class Asteroid(CircleShape):
         new_radius = self.radius - ASTEROID_MIN_RADIUS # self.radius is passed as old radius
         a1 = Asteroid(self.position.x, self.position.y, new_radius)
         a2 = Asteroid(self.position.x, self.position.y, new_radius)
-        a1.position += v1 * 1.2
-        a2.position += v2 * 1.2
+        a1.self.position += v1 * 1.2
+        a2.self.position += v2 * 1.2
