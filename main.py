@@ -59,7 +59,7 @@ def main():
             
             for shot in shots:
                 if objects.collision(shot) == True:
-                    objects.kill()
+                    objects.split()
                     shot.kill()
 
 
